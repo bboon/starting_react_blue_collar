@@ -1,5 +1,25 @@
 import "./App.css";
-import pokemonJSON from './pokemon.json'
+import pokemonJSON from "./pokemon.json";
+import { PropTypes } from "prop-types";
+
+const PokemonRow = ({ pokemon }) => {
+  return (
+    <tr>
+      <td>{pokemon.name.english} test</td>
+      <td>{pokemon.type.join(", ")}</td>
+    </tr>
+  );
+};
+
+// define the proptypes
+PokemonRow.propTypes = {
+  pokemon: PropTypes.shape({
+    name: PropTypes.shape({
+      english: PropTypes.string,
+    }),
+    type: PropTypes.arrayOf(PropTypes.string),
+  }),
+};
 
 function App() {
   return (
@@ -14,21 +34,19 @@ function App() {
       <h1 className="title">Pokemon search</h1>
 
       <table>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-        </tr>
-
-        <tbody>
-          { pokemonJSON.slice(0.,20)
-          .map((item) => (
-             <tr key={[item.id, item.name.english]}
-            >
-            <td>{item.name.english}</td>
-            <td>{item.type.join(", ")}</td>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
           </tr>
+        </thead>
+        <tbody>
+          {pokemonJSON.slice(0, 20).map((item) => (
+            <PokemonRow
+              pokemon={item}
+              key={[item.id, item.name.english]}
+            ></PokemonRow>
           ))}
-          
         </tbody>
       </table>
     </div>
