@@ -2,6 +2,7 @@ import "./App.css";
 import { PropTypes } from "prop-types";
 import { useState, useEffect } from "react";
 import  styled from "@emotion/styled";
+import { Button } from "@mui/material";
 
 const PokemonRow = ({ pokemon, onSelect }) => {
   return (
@@ -9,7 +10,7 @@ const PokemonRow = ({ pokemon, onSelect }) => {
       <td>{pokemon.name.english} test</td>
       <td>{pokemon.type.join(", ")}</td>
       <td>
-        <button onClick={() => onSelect(pokemon)}>Select</button>
+        <Button onClick={() => onSelect(pokemon)}>Select</Button>
       </td>
     </tr>
   );
