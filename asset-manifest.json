@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/starting_react_blue_collar/static/css/main.f855e6bc.css",
+    "main.js": "/starting_react_blue_collar/static/js/main.e34b2cde.js",
+    "static/js/787.8cca7168.chunk.js": "/starting_react_blue_collar/static/js/787.8cca7168.chunk.js",
+    "static/media/logo.svg": "/starting_react_blue_collar/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/starting_react_blue_collar/index.html",
+    "main.f855e6bc.css.map": "/starting_react_blue_collar/static/css/main.f855e6bc.css.map",
+    "main.e34b2cde.js.map": "/starting_react_blue_collar/static/js/main.e34b2cde.js.map",
+    "787.8cca7168.chunk.js.map": "/starting_react_blue_collar/static/js/787.8cca7168.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f855e6bc.css",
+    "static/js/main.e34b2cde.js"
+  ]
+}
