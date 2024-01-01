@@ -1,7 +1,6 @@
 import "./App.css";
-import pokemonJSON from "./pokemon.json";
 import { PropTypes } from "prop-types";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const PokemonRow = ({ pokemon, onSelect }) => {
   return (
@@ -53,12 +52,17 @@ PokemonInfo.propTypes = {
   }),
 }
 
-
-
-
 function App() {
   const [filter, filterSet] = useState("");
   const [selectedItem, setSelectedItem] = useState("");
+  const [pokemon, setPokemon] = useState([]);
+
+
+  useEffect(()=> {
+    fetch("http://localhost:3000/starting_react_blue_collar/pokemon.json").then(
+      resp => resp.json()
+    ).then( (data) => setPokemon(data))
+  }, [])
 
   return (
     // dashed properties are camelcased in react
@@ -91,7 +95,7 @@ function App() {
             </tr>
           </thead>
           <tbody>
-            {pokemonJSON
+            {pokemon && pokemon
               .filter((pokemon) =>
                 pokemon.name.english
                   .toLocaleLowerCase()
